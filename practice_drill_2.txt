@@ -1,0 +1,188 @@
+Pipes:
+
+1. Download the contents of "Harry Potter and the Goblet of fire" using the command line.
+	- cmd:
+		wget -O a.txt "https://raw.githubusercontent.com/bobdeng/owlreader/master/ERead/assets/books/Harry%20Potter%20and%20the%20Goblet%20of%20Fire.txt"
+		
+	- explanation: 
+		- wget is a command line utility to download file from web
+		- all context of downloaded file is stored into a.txt file
+
+
+2. Print the first three lines in the book.
+	- cmd:
+		head -n 3 a.txt
+	
+	- explanation:
+		- head refer as beginning of the file
+		- -n number of lines flag . 3 means 3 lines of a.txt
+	
+	
+3. Print the last 10 lines in the book.
+	-cmd:
+		tail -n 10 a.txt
+	 
+	- explanation:
+		- tail refer as end of the file
+	
+	
+4. How many times do the following words occur in the book? Harry, Ron, Hermione, Dumbledore.
+	- cmd:
+		grep -o -E 'Ron|Harry|Dumbledore|Hermione' a.txt | wc -l
+	
+	- explanation:
+		- grep stands for Global Regular Expression Print, it is used to search for specific patterns (text or regular expressions) in files or output.
+		- -E stands in grep cmd, Extended Regular Expression, we can say a little bit complicated expression or (advanced pattern matching)
+		- wc stands for word count, it is used to calculate words, line, characters in file or input, -l flag for lines
+
+
+5. Print lines from 100 through 200 in the book.
+	- cmd:
+		1) sed -n '100,200p' a.txt
+		2 ) awk "NR>=100 && NR<=200" a.txt
+	
+	- explanation:
+		- awk used for text processing and data extraction, NR -> number of records(lines)
+		- sed is a stream editor which process text line by line
+
+
+6. How many unique words are present in the book?
+	- cmd:
+		tr -c ':[alnum]:' '[\n*]' < a.txt | tr ':upper:' ':lower:' | sort | uniq | wc -l
+	
+	- explanation:
+		- tr is used to translate or delete characters. 
+		- first i'm converting all non-alphnumeric characters to into new lines then i convert all upper case characters to lower case after that i sort the ouput then i used uniq cmd , which gives only uniq words and wc for word counting
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Processes & Ports:
+
+1. List your browser's process ids (pid) and parent process ids(ppid)
+	- cmd:
+		1) ps -o pid,ppid,cmd -C brave
+		2) ps -o pid,ppid,cmd -C firefox
+	
+	- explanation:
+		ps is used to display running processes information
+	
+	
+2. Stop the browser application from the command line
+	- cmd:
+		killall brave
+		(kill <pid>)
+	
+	- explanation:
+		kill is used to send a signal to a process. 
+	
+	
+3. List the top 3 processes by CPU usage.
+	- cmd:
+		ps -e --sort=-%cpu | head -n 4
+	
+	- explanation:
+		first i'm sorting the processes by cpu usage, on that i'm displaying only first 3 processes
+	
+	
+4. List the top 3 processes by memory usage.
+	- cmd:
+		ps -e --sort=-%cpu | head -n 4
+	
+	- explanation:
+		first i'm sorting the processes by memory usage, on that i'm displaying only first 3 processes
+	
+	
+5. Start a Python HTTP server on port 8000
+	- cmd:
+		python -m http.server 8000
+	
+	- explanation:
+		using built in http server module i started the server on 8000 port
+	
+	
+6. Open another tab. Stop the process you started in the previous step
+	- cmd:
+		1) sudo lsof -i :8000
+		2) kill <pid>
+	
+	- explanation:
+		sudo lsof -i :8000 will display the pid and all information of process running on 8000, using kill we can stop the process
+	
+	
+7. Start a Python HTTP server on port 90
+	- cmd:
+		sudo python -m http.server 90
+	
+	- explanation:
+		Ports below 1024 are considered privileged, so we need the permission(root)
+	
+	
+8. Display all active connections and the corresponding TCP / UDP ports.
+	- cmd:
+		ss -tunl
+	
+	- explanation:
+		ss provides detail information about active connection (replacement of netstat)
+	
+9. Find the pid of the process that is listening on port 5432
+	- cmd:
+		sudo lsof -i :5432
+	
+	- explanation:
+		lsof (list open files), we can find on which port what process is running using lsof
+	
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Managing Software:
+
+1. Install htop, vim and nginx
+   - cmd: 
+   	sudo apt install htop vim nginx
+   	
+2. Uninstall nginx
+   - cmd: 
+   	sudo apt remove nginx
+
+- explanation:
+   	apt- command line package management tool, we can use apt for installing/removing packages in our system
+   	sudo- short form of superuser do. it is used to perform administrative tasks that require hire permissions.
+   	install- installing the packages
+   	remove- uninstalling the package
+   	
+-------------------------------------------------------------------------------------------------------------------------------
+
+Misc:
+
+1. What's your local IP address?
+	- cmd:
+		hostname -I
+	
+	- explanation:
+		hostname shows system name, domain name, etc. all device related information 
+	
+2. Find the IP address of google.com
+	- cmd:
+		1) nslookup google.com
+		2) dig google.com
+	
+	- explanation:
+		in both the cmd, we can see the ip of google.com, also we can use ping google.com
+	
+	
+3. How to check if Internet is working using CLI?
+	- cmd:
+		ping 8.8.8.8 / ping google.com
+	
+	- explanation:
+		if internet is working fine, it will continuously fetch data from google.com, if internet is not working , it will generate some err 
+	
+4. Where is the node command located? What about code?
+	- cmd:
+		1) which node
+		2) which code
+	
+	- explanation:
+		which cmd gives the path of executable file of node/code cmd
+	

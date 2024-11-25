@@ -1,0 +1,111 @@
+Directory Structure:
+
+hello
+├── five
+│   └── six
+│       ├── c.txt
+│       └── seven
+│           └── error.log
+└── one
+    ├── a.txt
+    ├── b.txt
+    └── two
+        ├── d.txt
+        └── three
+            ├── e.txt
+            └── four
+                └── access.log
+                
+
+To create above directory structure, following commands are used:
+
+---- here i'm creating dir and files through pwd ----
+1. mkdir hello
+2. cd hello
+3. mkdir five one
+4. cd five
+5. mkdir six
+6. cd six
+7. touch c.txt
+8. mkdir seven
+9. cd seven
+10. touch error.log
+
+---- here i'm creating dir and files only from hello dir----
+11. touch one/a.txt one/b.txt
+12. mkdir one/two
+13. touch one/two/d.txt
+14. mkdir one/two/three
+15. touch one/two/three/e.txt
+16. mkdir one/two/three/four
+17. touch one/two/three/access.log
+
+
+explanation: 
+	touch - used for creating files
+	mkdir - make directory/folder
+	cd - change directory
+	
+----------------------------------------------------------
+
+Question & Answers:
+
+1. Delete all the files having the .log extension
+
+    - cmd: 
+    		find . -type f -name '*.log' -exec rm -rf {} \;
+    		
+    - explanation: 
+    		    find - finds what we are looking recursively in dir and sub dir
+    		    . - current dir
+    		    -type f - we are searching file (not dir)
+    		    -name '*.log' - we are searching for a file who ends with .log , * is wildcard character, which represents one or more characters should be present in place of *
+    		    -exec - execute further commands on result of find cmd
+    		    rm - remove file 
+    		    -rf - remove recursively and forcefully
+    		    {} - where .log file finds by find cmd, it's path replaced with {}
+    		    \; - end of -exec cmd
+    
+
+2. Add the following content to a.txt
+	Unix is a family of multitasking, multiuser computer operating systems that derive from the original AT&T Unix, development starting in the 1970s at the Bell Labs research center by Ken Thompson, Dennis Ritchie, and others
+	
+	-cmd:
+		- Using echo: 
+			echo "Unix is a family of multitasking, multiuser computer operating systems that derive from the original AT&T Unix, development starting in the 1970s at the Bell Labs research center by Ken Thompson, Dennis Ritchie, and others" > a.txt
+	
+		- Using xclip: 
+			xclip -selection clipboard -o > a.txt
+		
+	- explanation: 
+		echo cmd used to display text on terminal and also used create/overwrite files or append to file.
+		xclip is command line utility to interact with x11 clipboard system in Linux. we can copy text from others files/web sites/apps and paste it on terminal. we can copy whole file's content to clipboard
+	
+	- We can use nano or vi editors also
+	
+	
+3. Delete the directory named five
+
+	- cmd: 
+		rm -r five
+		
+	- explanation: 
+		rm used for remove file or dir . -r used when we are trying to delete a dir which is not empty, so -r recursively deletes all subdir and files
+
+
+4. Rename the one directory to uno
+
+	- cmd: 
+		mv one uno
+		
+	- explanation: 
+		there is no command present for rename, we can use mv command to move all contents of particular file/dir to other. for rename we can use just different name of destination
+
+
+5. Move a.txt to the two directory
+
+	- cmd: 
+		mv a.txt ./two/
+		
+	- explanation: 
+		mv command is for move particular file/dir to other location
