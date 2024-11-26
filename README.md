@@ -1,8 +1,8 @@
 ## cat
-   ** Description **
-    - Displays the contents of a file.
-    - concatenates files.
-    - Creates new files.
+**Description**
+- Displays the contents of a file.
+- concatenates files.
+- Creates new files.
     
     - -n to display file with line numbers
     
