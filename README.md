@@ -9,9 +9,9 @@
  - -n to display file with line numbers
 
 **Q&A**
- - Display content of a file.
+- Display content of a file.
   > cat demo.txt
- - Create new file.
+- Create new file.
   > cat > new.txt
 
 
