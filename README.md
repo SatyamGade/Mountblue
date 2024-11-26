@@ -99,8 +99,89 @@
 # tail
 
 **Description**
- - 
-head
-more
-less
-uniq
+ - Displays the last lines of a file. (last 10 by default)
+
+**Important Flags**
+ - -n N to Show the last N lines.
+
+**Q&A**
+ - Display the last 5 lines of a file.
+
+   > tail -n 5 file.txt
+
+
+
+
+# head
+
+**Description**
+ - Displays the first lines of a file. (first 10 by default)
+
+**Important Flags**
+ - -n N to Show the first N lines.
+
+**Q&A**
+ - Display the first 5 lines of a file.
+
+   > head -n 5 file.txt
+
+
+
+
+# more
+
+**Description**
+ - Displays file contents one screen at a time.
+
+**Important Flags**
+ - -d to Show a message in the terminal for quit or continue.
+ - -c to Clear the screen before showing new content.
+
+**Q&A**
+ - Paginate a file.
+
+   > more file.txt
+ - Show content of a file one screen at a time with messages for quit or continue.
+
+   > more -d file.txt
+
+
+
+
+# less
+
+**Description**
+ - Displays file content, allowing navigation (backward and forward).
+
+**Important Flags**
+ - -N to Show line numbers.
+
+**Q&A**
+ - Navigate a file.
+
+   > less file.txt
+
+   > less -N file.txt  (_navigate a file with line numbers_)
+
+    - note: For searching a word interactively press / and type the word and navigate the file.
+
+
+
+
+# uniq
+
+**Description**
+ - Removes duplicate lines in sorted input.
+
+**Important Flags**
+ - -c to Prefix lines with the number of occurrences.
+ - -u to Display only unique lines.
+ - -d to Display only duplicate lines.
+
+**Q&A**
+ - Remove duplicate lines from a file.
+
+   > sort file.txt | uniq
+ - Show duplicate lines with counts.
+
+   > sort file.txt | uniq -c
