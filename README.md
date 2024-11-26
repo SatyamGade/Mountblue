@@ -1,5 +1,5 @@
 ## cat
-    ** Description **
+   ** Description **
     - Displays the contents of a file.
     - concatenates files.
     - Creates new files.
