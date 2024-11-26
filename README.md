@@ -1,15 +1,14 @@
-# cat
-  ## Description
+## cat
     - Displays the contents of a file.
     - concatenates files.
     - Creates new files.
-  ## Flags
-    - **-n** to display file with line numbers
-  ## Q & A
-    ### Display content of a file.
+    
+    - -n to display file with line numbers
+    
+    - Display content of a file.
       > cat <filename>
       > ex: cat demo.txt
-    ### Create new file.
+    - Create new file.
       > cat > new.txt
 
 
