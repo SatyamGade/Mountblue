@@ -60,11 +60,10 @@
 
 **Q&A**
  - Search for a word in a file.
- 
-  ```
-  grep "Word" file.txt
-  grep -i "Word" file.txt   ( _case insesitive search_ )
-  ```
+
+   > grep "Word" file.txt
+   
+   > grep -i "Word" file.txt   ( _case insesitive search_ )
  - Search recursively in a directory.
 
    > grep -r "word" /path/to/dir
