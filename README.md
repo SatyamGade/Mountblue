@@ -10,7 +10,7 @@
 
 **Q&A**
  - Display content of a file.
-  - cat demo.txt
+   - cat demo.txt
  - Create new file.
   - cat > new.txt
 
