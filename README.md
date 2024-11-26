@@ -10,10 +10,13 @@
 
 **Q&A**
 - Display content of a file.
+  
   > cat demo.txt
 - Merge two files to other file.
+  
   > cat first.txt second.txt > merged.txt
 - Create new file.
+  
   > cat > new.txt
 
 
