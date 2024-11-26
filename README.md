@@ -1,4 +1,4 @@
-## cat
+# cat
 
 **Description**
  - Displays the contents of a file.
