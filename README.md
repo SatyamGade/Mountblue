@@ -2,7 +2,7 @@
 
 **Description**
  - Displays the contents of a file.
- - concatenates files.
+ - Concatenates files.
  - Creates new files.
 
 **Important Flags**
@@ -18,6 +18,7 @@
 - Create new file.
   
   > cat > new.txt
+   - note: type content and press Ctrl+D to save that content to newly created file
 
 
 touch
