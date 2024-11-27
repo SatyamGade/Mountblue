@@ -18,7 +18,7 @@
 - Create new file.
   
   > cat > new.txt
-   - note: type content and press Ctrl+D to save that content to newly created file
+   - note: type content and press enter and then press Ctrl+D to save that content to newly created file
 
 
 
